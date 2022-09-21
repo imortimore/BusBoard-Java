@@ -7,7 +7,7 @@ public class Main {
 
 ClientAPI test = new ClientAPI();
 
-        System.out.println();
+        System.out.println(ClientAPI.getresponse().get(1).getid());
         // Your code here!
 
     }

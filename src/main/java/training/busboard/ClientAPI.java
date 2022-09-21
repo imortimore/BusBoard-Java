@@ -14,12 +14,17 @@ import java.util.List;
 import org.glassfish.jersey.jackson.JacksonFeature;
 
 public class ClientAPI {
+
+    public static List<BustopResponse> getresponse(){
     String bustop = "490008660N";
     Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
     WebTarget webTarget = client.target("https://api.tfl.gov.uk/StopPoint/id/Arrivals");
     WebTarget webtargetwithparam = webTarget.queryParam("id", bustop);
     List<BustopResponse> bustopResponse = webtargetwithparam.request(MediaType.APPLICATION_JSON)
     .get ( new GenericType<List<BustopResponse>>(){});
+
+    return bustopResponse;
+    }
     
     // Response response = invocationBuilder.get();
     // public String getResponse() {return response.toString();}
