@@ -13,7 +13,8 @@ public class ClientAPI {
     Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
     WebTarget webTarget = client.target("https://api.tfl.gov.uk/StopPoint/id/Arrivals");
     WebTarget webtargetwithparam = webTarget.queryParam("id", bustop);
-    Invocation.Builder invocationbuilder = webtargetwithparam.request(MediaType.APPLICATION_JSON);
-    Response response = invocationbuilder.get();
-    public Response getResponse() {return response;}
+    Invocation.Builder invocationBuilder = webtargetwithparam.request(MediaType.APPLICATION_JSON).get
+    
+    // Response response = invocationBuilder.get();
+    // public String getResponse() {return response.toString();}
 }
