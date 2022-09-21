@@ -6,11 +6,9 @@ public class Main {
     public static void main(String args[]) {
 
 ClientAPI test = new ClientAPI();
-
-        System.out.println(BustopResponse.StringToDate(ClientAPI.getresponse().get(1).getTimeStamp()));
-
-//System.out.println(ClientAPI.getresponse().get(1).getid());
-        // Your code here!
-
+for (int i=0 ; i < 5 ; i++){
+    System.out.print(ClientAPI.getresponse().get(i).getLineId()+" ");
+    System.out.println(ClientAPI.getresponse().get(i).getDestinationName());
+}
     }
 }	
