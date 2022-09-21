@@ -17,9 +17,42 @@ public class BustopResponse {
     private LocalDateTime expectedArrival;
 
 
-
     public BustopResponse(){
     }
+
+
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setStationName(String stationName) {
+        this.stationName = stationName;
+    }
+
+    
+
+    public void setDestinationName(String destinationName) {
+        this.destinationName = destinationName;
+    }
+
+    public void setTimeToStation(Integer timeToStation) {
+        this.timeToStation = timeToStation;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public void setExpectedArrival(LocalDateTime expectedArrival) {
+        this.expectedArrival = expectedArrival;
+    }
+
+   
+
+   
+
+    
 
     public String getid(){
         return id;
