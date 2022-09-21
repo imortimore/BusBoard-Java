@@ -82,9 +82,7 @@ public class BustopResponse {
     
     
     
-    public void setid(String id){
-        this.id = id;
-    }
+   
 
 
 
