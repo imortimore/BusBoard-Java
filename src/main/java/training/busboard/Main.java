@@ -7,7 +7,9 @@ public class Main {
 
 ClientAPI test = new ClientAPI();
 
-        System.out.println(ClientAPI.getresponse().get(1).getid());
+        System.out.println(BustopResponse.StringToDate(ClientAPI.getresponse().get(1).getTimeStamp()));
+
+//System.out.println(ClientAPI.getresponse().get(1).getid());
         // Your code here!
 
     }

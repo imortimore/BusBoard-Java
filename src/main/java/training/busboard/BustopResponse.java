@@ -1,6 +1,8 @@
 package training.busboard;
+import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -13,25 +15,18 @@ public class BustopResponse {
     private String lineId;
     private String destinationName;
     private Integer timeToStation;
-    private LocalDateTime timestamp;
-    private LocalDateTime expectedArrival;
-
-
+    private String timestamp;
+    private String expectedArrival;
+//constructor 
     public BustopResponse(){
     }
-
-
-
+//settters 
     public void setId(String id) {
         this.id = id;
     }
-
     public void setStationName(String stationName) {
         this.stationName = stationName;
     }
-
-    
-
     public void setDestinationName(String destinationName) {
         this.destinationName = destinationName;
     }
@@ -40,20 +35,14 @@ public class BustopResponse {
         this.timeToStation = timeToStation;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 
-    public void setExpectedArrival(LocalDateTime expectedArrival) {
+    public void setExpectedArrival(String expectedArrival) {
         this.expectedArrival = expectedArrival;
     }
-
-   
-
-   
-
-    
-
+//getters
     public String getid(){
         return id;
     }
@@ -69,13 +58,18 @@ public class BustopResponse {
     public Integer getTimeToStation(){
         return timeToStation;
     }
-    public LocalDateTime getTimeStamp(){
+    public String getTimeStamp(){
         return timestamp;
     }
-    public LocalDateTime getExpectedArrival(){
+    public String getExpectedArrival(){
         return expectedArrival;
     }
-
+//methods 
+    public static LocalDateTime StringToDate(String timeString){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSSS'Z'");
+        LocalDateTime dateTime = LocalDateTime.parse(timeString, formatter);   
+        return dateTime;
+    }
 
 
     
