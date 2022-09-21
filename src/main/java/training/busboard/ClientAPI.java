@@ -9,10 +9,11 @@ import jakarta.ws.rs.core.Response;
 import org.glassfish.jersey.jackson.JacksonFeature;
 
 public class ClientAPI {
+    String bustop = "490008660N";
     Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
-    WebTarget webTarget = client.target("https://api.tfl.gov.uk/StopPoint/490008660N/Arrivals");
-    
-    Invocation.Builder invocationbuilder = webTarget.request(MediaType.APPLICATION_JSON);
+    WebTarget webTarget = client.target("https://api.tfl.gov.uk/StopPoint/id/Arrivals");
+    WebTarget webtargetwithparam = webTarget.queryParam("id", bustop);
+    Invocation.Builder invocationbuilder = webtargetwithparam.request(MediaType.APPLICATION_JSON);
     Response response = invocationbuilder.get();
     public Response getResponse() {return response;}
 }
