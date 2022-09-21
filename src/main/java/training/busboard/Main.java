@@ -9,14 +9,19 @@ public class Main {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Please enter stop code");
-        String busStop = sc.nextLine();
+        System.out.println("Please enter postcode");
+        String postCode = sc.nextLine(); 
+        PostcodeAPI postCodeResponse = new PostcodeAPI(postCode);
+        postCodeResponse.makeRequest();
+        System.out.print(postCodeResponse.getPostCodeResponse());
 
-ClientAPI busResponse = new ClientAPI(busStop);
-busResponse.makeRequest();
-for (int i=0 ; i < 5 ; i++){
-    System.out.print(busResponse.getBustopResponselist().get(i).getLineId()+" ");
-    System.out.println(busResponse.getBustopResponselist().get(i).getDestinationName());
-}
+
+// ClientAPI busResponse = new ClientAPI(busStop);
+// busResponse.makeRequest();
+// for (int i=0 ; i < 5 ; i++){
+//     System.out.print(busResponse.getBustopResponselist().get(i).getLineId()+" ");
+//     System.out.println(busResponse.getBustopResponselist().get(i).getDestinationName());
+// }
+//     }
     }
-}	
+}
