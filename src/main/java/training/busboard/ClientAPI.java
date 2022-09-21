@@ -15,17 +15,38 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 
 public class ClientAPI {
 
-    public static List<BustopResponse> getresponse(){
-    String bustop = "490008660N";
+    
+
+    private List<BustopResponse> bustopResponselist;
+   
+    private String busStop;
+
+    public ClientAPI(String busStop) {
+        this.busStop = busStop;
+    }
+
+
+    public void makeRequest(){
     Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
     WebTarget webTarget = client.target("https://api.tfl.gov.uk/StopPoint/id/Arrivals");
-    WebTarget webtargetwithparam = webTarget.queryParam("id", bustop);
-    List<BustopResponse> bustopResponse = webtargetwithparam.request(MediaType.APPLICATION_JSON)
+    WebTarget webtargetwithparam = webTarget.queryParam("id", busStop);
+    bustopResponselist = webtargetwithparam.request(MediaType.APPLICATION_JSON)
     .get ( new GenericType<List<BustopResponse>>(){});
+    }
 
-    return bustopResponse;
+    
+
+    
+    //String bustop = "490008660N";
+    
+    public List<BustopResponse> getBustopResponselist() {
+        return bustopResponselist;
+    }
+
+
+    
     }
     
     // Response response = invocationBuilder.get();
     // public String getResponse() {return response.toString();}
-}
+
