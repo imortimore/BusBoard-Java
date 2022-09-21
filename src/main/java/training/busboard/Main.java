@@ -11,6 +11,7 @@ public class Main {
 
         System.out.println("Please enter postcode");
         String postCode = sc.nextLine(); 
+        System.out.println(postCode);
         PostcodeAPI postCodeResponse = new PostcodeAPI(postCode);
         postCodeResponse.makeRequest();
         System.out.print(postCodeResponse.getPostCodeResponse());

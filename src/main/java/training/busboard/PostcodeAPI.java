@@ -15,6 +15,7 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 
 public class PostcodeAPI {
     private String postCode;
+
     public PostcodeAPI(String postCode) {
         this.postCode = postCode;
     }
@@ -26,8 +27,9 @@ public class PostcodeAPI {
 
     public void makeRequest(){
         Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
-        WebTarget webTarget = client.target("http://api.postcodes.io/postcodes/postCode");
-        WebTarget webtargetwithparam = webTarget.queryParam("postCode", postCode);
+        WebTarget webTarget = client.target("https://api.postcodes.io/postcodes/");
+        WebTarget webtargetwithparam = webTarget.path(postCode);
+        System.out.println(webtargetwithparam);
         postCodeResponse = webtargetwithparam.request(MediaType.APPLICATION_JSON)
         .get ( new GenericType<Coords>(){});
         }

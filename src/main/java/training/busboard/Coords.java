@@ -1,13 +1,16 @@
 package training.busboard;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Coords {
     //fields
     private String latitude;
     private String longitude;
     //constructors
-    public Coords(String latitude, String longitude) {
-        this.latitude = latitude;
-        this.longitude = longitude;
+    public Coords() {
+        
     }
     //getters
     public String getLatitude() {
