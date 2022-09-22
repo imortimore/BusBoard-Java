@@ -21,6 +21,13 @@ public class ClientAPI {
    
     private String busStop;
 
+    public String getBusStop() {
+        return busStop;
+    }
+    public void setBusStop(String busStop) {
+        this.busStop = busStop;
+    }
+    //constructor
     public ClientAPI(String busStop) {
         this.busStop = busStop;
     }

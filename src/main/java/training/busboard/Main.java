@@ -14,24 +14,21 @@ public class Main {
         System.out.println(postCode);
         PostcodeAPI postCodeResponse = new PostcodeAPI(postCode);
         postCodeResponse.makeRequest();
-        Result resultobj = postCodeResponse.getPostCodeResponse();
-       
+        Result resultobj = postCodeResponse.getPostCodeResponse();       
         System.out.print(resultobj.result.getlatitude());
         GetStopCodeApi stopCode = new GetStopCodeApi();
         stopCode.makeRequest(resultobj.result);
+        String busStop = (stopCode.getstopCodeResponselist().getStopPoints().get(0).getNaptanId());
 
-        System.out.println(stopCode.getstopCodeResponselist().getStopPoints().get(0).getNaptanId());
-        
-
-
-// ClientAPI busResponse = new ClientAPI(busStop);
-// busResponse.makeRequest();
-// for (int i=0 ; i < 5 ; i++){
-//     System.out.print(busResponse.getBustopResponselist().get(i).getLineId()+" ");
-//     System.out.println(busResponse.getBustopResponselist().get(i).getDestinationName());
-//      
-// }
-//     }
-
+ClientAPI busResponse = new ClientAPI(busStop);
+//busResponse.setBusStop(busStop);
+busResponse.makeRequest();
+for (int i=0 ; i < 5 ; i++){
+    System.out.print(busResponse.getBustopResponselist().get(i).getLineId()+" ");
+    System.out.println(busResponse.getBustopResponselist().get(i).getDestinationName());
+     
+}
     }
 }
+
+
