@@ -20,7 +20,7 @@ public class Main {
         GetStopCodeApi stopCode = new GetStopCodeApi();
         stopCode.makeRequest(resultobj.result);
 
-        System.out.println(stopCode.getstopCodeResponselist().getStopPoints().getList());
+        System.out.println(stopCode.getstopCodeResponselist().getStopPoints().get(0).getNaptanId());
         
 
 

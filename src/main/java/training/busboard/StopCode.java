@@ -6,32 +6,19 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StopCode {
 
-    StopPoints stopPoints = new StopPoints();
-
-    public StopPoints getStopPoints() {
-        return stopPoints;
+    public StopCode(){
+        
     }
 
-    public void setStopPoints(StopPoints stopPoints) {
-        this.stopPoints = stopPoints;
-    }
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public class StopPoints {
+   private List<StopPoints> stopPoints;
 
-        List<Object> list;
-
-        public List<Object> getList() {
-            return list;
+       
+        public List<StopPoints> getStopPoints() {
+            return stopPoints;
         }
 
-        public void setList(List<Object> list) {
-            this.list = list;
+        public void setStopPoints(List<StopPoints> stopPoints) {
+            this.stopPoints = stopPoints;
         }
-
-        public StopPoints() {
-
-        }
-
-
-    }
+    
 }
