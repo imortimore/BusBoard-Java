@@ -17,6 +17,10 @@ public class Main {
         Result resultobj = postCodeResponse.getPostCodeResponse();
        
         System.out.print(resultobj.result.getlatitude());
+        GetStopCodeApi stopCode = new GetStopCodeApi();
+        stopCode.makeRequest(resultobj.result);
+
+        System.out.println(stopCode.getstopCodeResponselist().getStopPoints());
 
 
 // ClientAPI busResponse = new ClientAPI(busStop);
