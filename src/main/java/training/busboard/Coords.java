@@ -9,8 +9,7 @@ public class Coords {
     private String resultlatitude;
     private String resultlongitude;
     //constructors
-    public Coords() {
-        
+    public Coords() {    
     }
     //getters
     public String getResultlatitude() {
