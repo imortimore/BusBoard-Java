@@ -2,6 +2,8 @@ package training.busboard;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class StopCode {
 
     StopPoints stopPoints = new StopPoints();
@@ -13,7 +15,7 @@ public class StopCode {
     public void setStopPoints(StopPoints stopPoints) {
         this.stopPoints = stopPoints;
     }
-
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public class StopPoints {
 
         List<Object> list;

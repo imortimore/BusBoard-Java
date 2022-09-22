@@ -20,7 +20,8 @@ public class Main {
         GetStopCodeApi stopCode = new GetStopCodeApi();
         stopCode.makeRequest(resultobj.result);
 
-        System.out.println(stopCode.getstopCodeResponselist().getStopPoints());
+        System.out.println(stopCode.getstopCodeResponselist().getStopPoints().getList());
+        
 
 
 // ClientAPI busResponse = new ClientAPI(busStop);
@@ -28,6 +29,7 @@ public class Main {
 // for (int i=0 ; i < 5 ; i++){
 //     System.out.print(busResponse.getBustopResponselist().get(i).getLineId()+" ");
 //     System.out.println(busResponse.getBustopResponselist().get(i).getDestinationName());
+//      
 // }
 //     }
 
