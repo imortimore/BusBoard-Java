@@ -14,7 +14,9 @@ public class Main {
         System.out.println(postCode);
         PostcodeAPI postCodeResponse = new PostcodeAPI(postCode);
         postCodeResponse.makeRequest();
-        System.out.print(postCodeResponse.getPostCodeResponse().getResultcoords().getResultlatitude());
+        Result resultobj = postCodeResponse.getPostCodeResponse();
+       
+        System.out.print(resultobj.result.getlatitude());
 
 
 // ClientAPI busResponse = new ClientAPI(busStop);
