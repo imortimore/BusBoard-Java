@@ -19,9 +19,9 @@ public class PostcodeAPI {
     public PostcodeAPI(String postCode) {
         this.postCode = postCode;
     }
-    private Coords postCodeResponse;
+    private Result postCodeResponse;
     
-    public Coords getPostCodeResponse() {
+    public Result getPostCodeResponse() {
         return postCodeResponse;
     }
 
@@ -31,9 +31,10 @@ public class PostcodeAPI {
         WebTarget webtargetwithparam = webTarget.path(postCode);
         System.out.println(webtargetwithparam);
         postCodeResponse = webtargetwithparam.request(MediaType.APPLICATION_JSON)
-        .get ( new GenericType<Coords> (){});
-        
+        .get (Result.class);
         }
+
+        
         
 
 
