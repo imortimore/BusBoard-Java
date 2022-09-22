@@ -18,9 +18,9 @@ public class Main {
         System.out.print(resultobj.result.getlatitude());
         GetStopCodeApi stopCode = new GetStopCodeApi();
         stopCode.makeRequest(resultobj.result);
-        String busStop = (stopCode.getstopCodeResponselist().getStopPoints().get(0).getNaptanId());
+        System.out.println(stopCode.getstopCodeResponselist().getStopPoints().get(0).getNaptanId());
 
-ClientAPI busResponse = new ClientAPI(busStop);
+ClientAPI busResponse = new ClientAPI(stopCode.getstopCodeResponselist().getStopPoints().get(0).getNaptanId());
 //busResponse.setBusStop(busStop);
 busResponse.makeRequest();
 for (int i=0 ; i < 5 ; i++){
