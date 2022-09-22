@@ -6,24 +6,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 public class Coords {
     //fields
-    private String latitude;
-    private String longitude;
+    private String resultlatitude;
+    private String resultlongitude;
     //constructors
     public Coords() {
         
     }
     //getters
-    public String getLatitude() {
-        return latitude;
+    public String getResultlatitude() {
+        return resultlatitude;
     }
-    public String getLongitude() {
-        return longitude;
+    public String getResultlongitude() {
+        return resultlongitude;
     }
     //setters
-    public void setLatitude(String latitude) {
-        latitude = latitude;
+    public void setResultlatitude(String resultlatitude) {
+        this.resultlatitude = resultlatitude;
     }
-    public void setLongitude(String longitude) {
-        longitude = longitude;
+    public void setResultlongitude(String resultlongitude) {
+        this.resultlongitude = resultlongitude;
     }
 }

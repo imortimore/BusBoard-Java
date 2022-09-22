@@ -31,8 +31,10 @@ public class PostcodeAPI {
         WebTarget webtargetwithparam = webTarget.path(postCode);
         System.out.println(webtargetwithparam);
         postCodeResponse = webtargetwithparam.request(MediaType.APPLICATION_JSON)
-        .get ( new GenericType<Coords>(){});
+        .get ( new GenericType<Coords> (){});
+        
         }
+        
 
 
     
